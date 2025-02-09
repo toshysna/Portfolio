@@ -134,14 +134,36 @@ footer {
   color: #bb86fc;
 }
 
+/* Fancy animation for links */
 .link-hover {
+  font-weight: bold;
+  font-size: 1.1em;
   color: #bb86fc;
   text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.link-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #bb86fc;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
 .link-hover:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+.link-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .center-embed {
