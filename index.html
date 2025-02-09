@@ -20,39 +20,88 @@
     </header>
 
     <main>
-      <!-- Section Diplômes -->
       <section id="diplomes">
         <h2>Diplômes</h2>
-        <p>lister diplômes/certificats.</p>
+        <h3 style="text-align: center">Mes diplomes</h3>
+        <div class="certificate-grid">
+          <img src="BAC.jpg" alt="BAC" class="certificate" />
+          <img
+            src="Introduction-to-Calculus-.png"
+            alt="Introduction to Calculus"
+            class="certificate"
+          />
+          <img
+            src="First Cambridge.png"
+            alt="Cambridge First (B2)"
+            class="certificate"
+          />
+          <img src="BREVET.png" alt="BREVET" class="certificate" />
+        </div>
       </section>
 
-      <!-- Section Cybersécurité -->
       <section id="cybersecurite">
         <h2>Cybersécurité</h2>
-        <p>
-          Ajouter liens et présentations des travaux et projets en
-          cybersécurité.
-        </p>
+        <h3 style="text-align: center">
+          Scanner de port, Bibliothèque Numérique
+        </h3>
       </section>
 
-      <!-- Section Jeux -->
       <section id="jeux">
         <h2>Jeux / Web design</h2>
-        <p>
-          - Premièrement, et bien ce Portfolio! Ensuite mettre Space snake et
-          geometry dash
-        </p>
+        <h3 style="text-align: center">
+          Space Snake, Geometry Dash, mini-sites web, etc.
+        </h3>
       </section>
 
-      <!-- Section 3D -->
       <section id="3d">
         <h2>3D</h2>
-        <p>Mettre liens projets en 3D.</p>
+        <h3 style="text-align: center">
+          Vous pouvez regarder ici mes diverses créations 3D, notamment un
+          aperçu vidéo :
+        </h3>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/FiIOw1q0cPY"
+            title="Démonstration 3D"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </section>
     </main>
 
     <footer>
       <p>&copy; 2025 Toshysna. Tous droits réservés.</p>
     </footer>
+
+    <div class="modal" id="modal">
+      <span class="close" id="closeBtn">&times;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
+
+    <script>
+      const certificates = document.querySelectorAll(".certificate");
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      const closeBtn = document.getElementById("closeBtn");
+
+      certificates.forEach((cert) => {
+        cert.addEventListener("click", () => {
+          modal.style.display = "block";
+          modalImg.src = cert.src;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>
