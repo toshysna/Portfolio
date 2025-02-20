@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="progress-bar"></div>
     <header>
       <h1>Portfolio de Anselme B.C</h1>
       <nav>
@@ -19,7 +20,6 @@
         </ul>
       </nav>
     </header>
-
     <main>
       <section id="diplomes">
         <h2>Diplômes</h2>
@@ -38,7 +38,6 @@
           <img src="BREVET.png" alt="BREVET" class="certificate" />
         </div>
       </section>
-
       <section id="cybersecurite">
         <h2>Cybersécurité</h2>
         <h3 style="text-align: center">
@@ -64,7 +63,6 @@
           >
         </p>
       </section>
-
       <section id="jeux/web design">
         <h2>Jeux / Web design</h2>
         <h3 style="text-align: center">Jouez à Space Snake ici :</h3>
@@ -79,11 +77,12 @@
               src="https://itch.io/embed/3224858?&amp;bg_color=02001d&amp;fg_color=ffffff&amp;link_color=bc3aff&amp;border_color=32334b"
               width="554"
               height="169"
-              ><a href="https://toshysna.itch.io/space-snake"
+            >
+              <a href="https://toshysna.itch.io/space-snake"
                 >Space Snake by Toshysna</a
-              ></iframe
-            ></a
-          >
+              >
+            </iframe>
+          </a>
         </p>
         <h3 style="text-align: center">Jouez à Geometry Dashgan ici !</h3>
         <div class="center-embed">
@@ -102,7 +101,6 @@
           moi-même.
         </h3>
       </section>
-
       <section id="3d">
         <h2>3D</h2>
         <h3 style="text-align: center">
@@ -118,7 +116,6 @@
           ></iframe>
         </div>
       </section>
-
       <section id="2d">
         <h2>2D</h2>
         <h3 style="text-align: center">Inktober 2024</h3>
@@ -143,37 +140,42 @@
         </div>
       </section>
     </main>
-
     <footer>
       <p>&copy; 2025 Toshysna. Tous droits réservés.</p>
     </footer>
-
     <div class="modal" id="modal">
       <span class="close" id="closeBtn">&times;</span>
       <img class="modal-content" id="modalImg" />
     </div>
-
     <script>
       const certificates = document.querySelectorAll(".certificate");
       const modal = document.getElementById("modal");
       const modalImg = document.getElementById("modalImg");
       const closeBtn = document.getElementById("closeBtn");
-
       certificates.forEach((cert) => {
         cert.addEventListener("click", () => {
           modal.style.display = "block";
           modalImg.src = cert.src;
         });
       });
-
       closeBtn.addEventListener("click", () => {
         modal.style.display = "none";
       });
-
       modal.addEventListener("click", (e) => {
         if (e.target === modal) {
           modal.style.display = "none";
         }
+      });
+    </script>
+    <script>
+      window.addEventListener("scroll", function () {
+        var scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        var scrollHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = (scrollTop / scrollHeight) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
       });
     </script>
   </body>

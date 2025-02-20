@@ -5,17 +5,14 @@ body {
   color: #e0e0e0;
   line-height: 1.6;
 }
-
 header {
   background-color: #1f1f1f;
   padding: 1rem;
   text-align: center;
 }
-
 header h1 {
   margin: 0;
 }
-
 nav ul {
   list-style: none;
   padding: 0;
@@ -24,29 +21,25 @@ nav ul {
   justify-content: center;
   gap: 2rem;
 }
-
 nav ul li a {
   color: #e0e0e0;
   text-decoration: none;
   transition: color 0.3s ease;
+  cursor: none !important;
 }
-
 nav ul li a:hover {
   color: #bb86fc;
 }
-
 main {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
-
 section h2 {
   border-bottom: 2px solid #bb86fc;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
-
 section p {
   font-size: 1.05rem;
   color: #d0d0d0;
@@ -56,13 +49,11 @@ section p {
   margin-left: auto;
   margin-right: auto;
 }
-
 footer {
   text-align: center;
   padding: 1rem;
   background-color: #1f1f1f;
 }
-
 .video-container {
   position: relative;
   width: 100%;
@@ -71,7 +62,6 @@ footer {
   height: 0;
   overflow: hidden;
 }
-
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -80,13 +70,11 @@ footer {
   height: 100%;
   border: 0;
 }
-
 .certificate-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
 }
-
 .certificate {
   width: 100%;
   cursor: pointer;
@@ -94,11 +82,9 @@ footer {
   border-radius: 4px;
   object-fit: cover;
 }
-
 .certificate:hover {
   transform: scale(1.05);
 }
-
 .modal {
   display: none;
   position: fixed;
@@ -110,7 +96,6 @@ footer {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
 }
-
 .modal-content {
   display: block;
   margin: 5% auto;
@@ -118,7 +103,6 @@ footer {
   max-height: 80vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 .close {
   position: absolute;
   top: 30px;
@@ -129,12 +113,9 @@ footer {
   cursor: pointer;
   transition: color 0.2s ease;
 }
-
 .close:hover {
   color: #bb86fc;
 }
-
-/* Fancy animation for links */
 .link-hover {
   font-weight: bold;
   font-size: 1.1em;
@@ -143,7 +124,6 @@ footer {
   position: relative;
   transition: all 0.3s ease;
 }
-
 .link-hover::after {
   content: "";
   position: absolute;
@@ -156,16 +136,22 @@ footer {
   transform-origin: right;
   transition: transform 0.3s ease;
 }
-
 .link-hover:hover {
   transform: scale(1.1);
 }
-
 .link-hover:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
-
 .center-embed {
   text-align: center;
+}
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0%;
+  background: #616bff;
+  z-index: 10001;
 }
